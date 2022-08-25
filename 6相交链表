@@ -1,5 +1,4 @@
 
-
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
     a,b:=headA,headB
     if headA==nil || headB==nil {
