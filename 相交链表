@@ -1,0 +1,26 @@
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+    a,b:=headA,headB
+    if headA==nil || headB==nil {
+        return nil 
+    }
+    for a!=nil {
+        for b!=nil {
+            if a!=b {
+                b=b.Next
+            }else {
+                break
+            }
+        }
+        if a==b {
+            break 
+        }else {
+            b=headB
+            a=a.Next
+        }
+    }
+    if a==b {
+        return a
+    }else {
+        return nil 
+    }
+}
