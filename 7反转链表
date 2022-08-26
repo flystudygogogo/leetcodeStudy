@@ -1,0 +1,52 @@
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func reverseList(head *ListNode) *ListNode {
+    temp:=&ListNode{}
+
+    temp=head
+
+
+    if temp==nil {
+        return head
+    }
+    if temp.Next==nil {
+        return head
+    }
+    var a []int
+
+    for temp!=nil {
+        a = append(a,temp.Val)
+        temp=temp.Next
+    }
+    c:=len(a)
+    var b []int
+
+    for i:=c-1;i>=0;i--{
+        b=append(b,a[i])
+    }
+    node :=&ListNode{
+        Val:b[0],
+    }
+    temp=node
+    for i:=1;i<c;i++{
+        node.Next=&ListNode{
+            Val:b[i],
+        }
+        node=node.Next
+    }
+
+    return temp
+
+}
+
+
+
+
+
+
+
