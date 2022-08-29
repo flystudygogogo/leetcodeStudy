@@ -27,3 +27,11 @@ func reversePrint(head *ListNode) []int {
 
         return b
 }
+
+//第二种方法，递归写法
+func reversePrint(head *ListNode) []int {
+	if head == nil {
+		return []int{}
+	}
+	return append(reversePrint(head.Next), head.Val)
+}
