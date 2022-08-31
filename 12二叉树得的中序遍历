@@ -1,0 +1,19 @@
+//递归方法 
+ var a []int
+func inorderTraversal(root *TreeNode) []int {
+    a = make([]int, 0)
+    traversal(root)
+
+    return a
+
+}
+
+func traversal(root *TreeNode){
+    if root!=nil {
+        traversal(root.Left)
+        a=append(a,root.Val)
+        traversal(root.Right)
+
+    }
+    
+}
