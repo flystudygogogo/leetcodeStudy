@@ -1,0 +1,34 @@
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+var C int //装载的最大容量
+var n int //物体的数量
+
+func main() {
+	num := 0
+	sum := 0
+	fmt.Println("请输入装载的总重量:")
+	fmt.Scanln(&C)
+	fmt.Println("请输入物体的数量:")
+	fmt.Scanln(&n)
+	w := make([]int, n)
+	for i := 0; i < n; i++ {
+		fmt.Printf("请输入第%d个物体的重量:\n", i+1)
+		fmt.Scanln(&w[i])
+	}
+
+	sort.Ints(w)
+	fmt.Println(w)
+
+	for i := 0; i < n; i++ {
+		if sum+w[i] <= C {
+			sum = sum + w[i]
+			num++
+		}
+	}
+	fmt.Printf("最多可以装载%d个物体的重量", num)
+}
